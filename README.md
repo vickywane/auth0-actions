@@ -1,5 +1,7 @@
 # Extend Your Auth0 Authentication Flow Through Auth0 Actions
 
+![D01E2E00-7FFF-46EC-9028-3169CB1590C8.jpeg](https://cdn.hashnode.com/res/hashnode/image/upload/v1634546266183/o0SYjBjC7Y.jpeg)
+
 When using a third-party service such as  [Auth0](https://auth0.com)  to handle the authentication needs of your application, you might need to hook some custom functionality into the authentication process. An example might be the requirement of an application to send a security email to users after they change their password.
 
 In this tutorial, you will learn about Auth0 Actions, and how they can be used to hook custom processes to your  authentication flow.
