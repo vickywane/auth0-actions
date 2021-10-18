@@ -179,3 +179,5 @@ Click the right placed **Apply** button at the top to apply the action to the Po
 This tutorial went through the basics of Auth0 Actions. We built a custom Action that uses Nodemailer to send email alerts to a user after they change their password. 
 
 Actions are very useful when extending your Auth0 integration. Asides from the post-change password trigger, there are other triggers you can use with an Action, such as the Machine To Machine trigger for IoT applications, Post User Registration trigger for enriching a new user’s metadata, amongst others. 
+
+Enjoyed the article? At Hera Marketing, we write technical content like this for developers, programmers, software engineers, developer advocates and CTOs. Wherever you are with content marketing, we'll meet you there and collaborate to meet your goals. https://calendly.com/heramarketing/hera-intro, let's work together to attract, educate, and engage your audience.
