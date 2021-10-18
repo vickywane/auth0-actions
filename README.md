@@ -2,20 +2,20 @@
 
 ![D01E2E00-7FFF-46EC-9028-3169CB1590C8.jpeg](https://cdn.hashnode.com/res/hashnode/image/upload/v1634546266183/o0SYjBjC7Y.jpeg)
 
-When using a third-party service such as  [Auth0](https://auth0.com)  to handle the authentication needs of your application, you might need to hook some custom functionality into the authentication process. An example might be the requirement of an application to send a security email to users after they change their password.
+When using a third-party service such as  [Auth0](https://auth0.com) to handle all the authentication needs of your application, you might need to hook some custom functionality into the authentication process. An example might be the requirement of an application to send a security email to users after they change their password.
 
-In this tutorial, you will learn about Auth0 Actions, and how they can be used to hook custom processes to your  authentication flow.
+In this tutorial, you will learn about [Auth0 Actions](https://auth0.com/docs/actions), and how they can be used to hook custom processes to your existing authentication flow.
 
 ## What We Will Build 
 
-Within this article, you will build an Auth0 Action written in [Node.js](https://nodejs.org/en/)  to implement the delivery of email alerts to the users within an Auth0 tenant in response to a password change event that is triggered after a user changes the password to their account.
+Within this article, you will build an Auth0 Action written in [Node.js](https://nodejs.org/en/)  to implement the delivery of email alerts to users within your Auth0 tenant in response to a password change event that is triggered after a user changes the password to their account.
 
 ## Prerequisites
 
 This tutorial contains a demo implementation of an  [Auth0 Action](https://auth0.com/docs/actions) to send email alerts. To follow along with the steps to build the Action, you need:
 
-- An  [auth0](https://auth0.com/) account . If you do not have an account, you can  [sign up](https://auth0.com/signup)  for a free account.
-- A  [Mailgun](https://www.mailgun.com/)  account to use as an  [SMTP](https://sendgrid.com/blog/what-is-an-smtp-server)  server to send emails through the Auth0 Action. 
+- An [auth0](https://auth0.com/) account . If you do not have an account, you can  [sign up](https://auth0.com/signup)  for a free account.
+- A  [Mailgun](https://www.mailgun.com/) account to use as an [SMTP](https://sendgrid.com/blog/what-is-an-smtp-server)  server to send emails through the Auth0 Action. 
 
 ## Auth0 Actions
 
@@ -45,7 +45,7 @@ The **Create Action** text will open a modal for inputting the details of the ne
 
 From the opened Create Action modal, enter a preferred name for the Action in the Name input field. 
 
-By default, the recommended Node 16 runtime will be selected. However, you can change this runtime to Node 12 if you will use a library that does not support the Node 16 runtime.
+By default, the recommended [Node 16 runtime](https://nodejs.org/en/about/releases/) will be selected. However, you can change this runtime to Node 12 if you will use a library that does not support the Node 16 runtime.
 
 Click the **Create button** to create the Action and proceed to the code playground where you will write the JavaScript code to be executed when this Action is triggered. 
 
@@ -55,9 +55,12 @@ Click the **Create button** to create the Action and proceed to the code playgro
 The Actions playground on the next page provides a code editor for you to write the JavaScript function executed when this action is triggered. 
 
 From the Actions playground, you can test and debug your Action before clicking the Deploy button to deploy it into your flow. You can also use the Version History to view all deployed versions of an Action. 
-Action Environment Variables
 
-Sensitive credentials used with an Action are stored as a secret and the values are accessed by the keys within the event parameter. Even though your Action code might be available to you only, we recommend that you store all sensitive credentials as secrets.
+## Action Environment Variables
+
+Sensitive credentials used with an Action are stored as secrets and the values are accessed using the keys field within the event parameter. Even though your Action code might be available to you only, it is recommended that you store all sensitive credentials as [secrets](https://auth0.com/docs/actions/write-your-first-action#add-a-secret).
+
+**Note:** Please go through the [Where Can I Find My API Key and SMTP Credentials?](https://help.mailgun.com/hc/en-us/articles/203380100-Where-Can-I-Find-My-API-Key-and-SMTP-Credentials-) question within the Mailgun Help Centre to know where to retrieve your Mailgun SMTP credentials.
 
 To add the three SMTP credentials that will be used by the nodemailer node package to send email alerts, click the lock icon within the code editor’s sidebar.
 
